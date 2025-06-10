@@ -34,7 +34,7 @@ jobs:
           go-version: '1.19'
 
       - name: Install golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v7
         with:
           version: latest
           args: --config=.golangci.yml
