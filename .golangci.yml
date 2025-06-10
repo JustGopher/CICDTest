@@ -3,8 +3,10 @@ run:
   timeout: 5m
 
 linters:
+  default: none
   enable:
-    - govet
-    - errcheck
-    - staticcheck
-    - revive
+    - govet         # Go 官方提供的 vet 工具，检查语义错误
+    - errcheck      # 检查所有函数返回值是否被正确处理，避免漏检 error
+    - staticcheck   # 非常强大的 linter，能查出死代码、不安全代码、拼写错误等
+    - revive        # 用于风格一致性检查，是 golint 的替代品，配置灵活
+    - unused        #检查未使用的变量、函数、常量、类型等（减少冗余）
