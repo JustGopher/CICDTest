@@ -1,7 +1,9 @@
+// main 项目起始包
 package main
 
 import "fmt"
 
+// Add 求和函数
 func Add(a, b int) int {
 	return a + b
 }
