@@ -50,3 +50,19 @@ jobs:
           args: --config=.golangci.yml
           verify: true  # ✅ 加上这个跳过 config verify
           only-new-issues: false
+
+  lint-on-pr:
+    if: github.event_name == 'pull_request'  # 只在 PR 触发
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.19'
+      - name: Run golangci-lint via reviewdog 🐶
+        uses: reviewdog/action-golangci-lint@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          golangci_lint_flags: "--config=.golangci.yml"
+          reporter: github-pr-review
+          level: warning
