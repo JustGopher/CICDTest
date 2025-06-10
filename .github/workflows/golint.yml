@@ -43,5 +43,5 @@ jobs:
         uses: golangci/golangci-lint-action@v7
         with:
           version: v2.1.6
-          args: -run --config=.golangci.yaml
+          args: --config=.golangci.yaml
           skip-config-check: true   # ✅ 加上这个跳过 config verify
