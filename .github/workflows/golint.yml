@@ -48,4 +48,5 @@ jobs:
         with:
           version: v2.1.6
           args: --config=.golangci.yml
-          skip-config-check: true   # ✅ 加上这个跳过 config verify
+          verify: true  # ✅ 加上这个跳过 config verify
+          only-new-issues: false
