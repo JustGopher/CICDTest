@@ -43,5 +43,5 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: v2.1.6
-          args: run --config=.golangci.yml
+          args: run --config=.golangci.yml --out-format colored-line-number
           skip-config-check: true   # ✅ 加上这个跳过 config verify
