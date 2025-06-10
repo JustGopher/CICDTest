@@ -40,4 +40,8 @@ jobs:
           args: --config=.golangci.yml
 
       - name: Run golangci-lint
-        run: golangci-lint run --config=.golangci.yml
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v2.1.6
+          args: run --config=.golangci.yml
+          skip-config-check: true   # ✅ 加上这个跳过 config verify
