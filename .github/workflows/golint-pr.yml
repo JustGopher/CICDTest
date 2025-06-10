@@ -1,4 +1,4 @@
-name: Go Lint -PR
+name: Lint-PR
 on:
   pull_request:
     branches:
@@ -15,7 +15,7 @@ jobs:
         with:
           go-version: '1.19'
       - name: Run golangci-lint via reviewdog 🐶
-        uses: reviewdog/action-golangci-lint@v7
+        uses: reviewdog/action-golangci-lint@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           golangci_lint_flags: "--config=.golangci.yml"
