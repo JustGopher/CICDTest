@@ -33,13 +33,11 @@ jobs:
         with:
           go-version: '1.19'
 
-      # 第三步：安装依赖项
-      - name: Install dependencies
-        # 运行命令来下载项目的依赖项
-        run: go mod download
+      - name: Install golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          args: --config=.golangci.yml
 
-      # 第四步：运行golangci-lint进行代码检查
       - name: Run golangci-lint
-        # 执行代码检查命令
-        run: golangci-lint run
-          echo test, and deploy your project.
+        run: golangci-lint run --config=.golangci.yml
